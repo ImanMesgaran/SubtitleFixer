@@ -28,7 +28,7 @@ namespace SubtitleFixer
         {
             foreach (var file in listOfFiles)
             {
-                var newFilePath = $@"{path}\Converted\{Path.GetFileName(file)}";
+                var newFilePath = $@"{path}\Converted\{Path.GetFileNameWithoutExtension(file)} - Edited.{Path.GetExtension(file)}";
                 
                 var content = File.ReadAllBytes(file);
                 var Utf8Data = ConvertAnsiToUtf8(content);
